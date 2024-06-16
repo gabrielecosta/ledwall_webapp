@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Cartellone</title>
+    <link rel="stylesheet" href="/css/report.css">
+</head>
+<body>
+<div class="container">
+    <h1>Report Cartellone</h1>
+    <form id="reportForm">
+        <label for="cartelloneSelect">Seleziona Cartellone:</label>
+        <select id="cartelloneSelect" name="cartellone">
+        </select>
+        <label for="fromDate">Seleziona Data Iniziale:</label>
+        <input type="date" id="fromDate" name="fromDate">
+        <label for="toDate">Seleziona Data Finale:</label>
+        <input type="date" id="toDate" name="toDate">
+        <button type="button" onclick="fetchReport()">Visualizza Report</button>
+    </form>
+    <div id="reportContainer">
+        <h2>Visualizzazioni Totali: <span id="totalViews"></span></h2>
+        <ul id="impiantoViews"></ul>
+        <h3>Percorso dei Cartelloni:</h3>
+        <ul id="palinsestiPath"></ul>
+        <h3>Tempo di Impressioni per Cartellone (in Minuti):</h3>
+        <ul id="tempoImpressioniCartelloni"></ul>
+    </div>
+</div>
+
+<script>
+
+    async function fetchCartelloni() {
+        const response = await fetch('/report/get_cartelloni');
+        const cartelloni = await response.json();
+        const select = document.getElementById('cartelloneSelect');
+        cartelloni.forEach(cartellone => {
+            const option = document.createElement('option');
+            option.value = cartellone;
+            option.textContent = cartellone;
+            select.appendChild(option);
+        });
+    }
+
+    async function fetchReport() {
+        const cartellone = document.getElementById('cartelloneSelect').value;
+        const fromDate = document.getElementById('fromDate').value;
+        const toDate = document.getElementById('toDate').value;
+
+        // Fetch impressioni
+        const responseImpressioni = await fetch(`/report/get_impressioni?id_cartellone=${cartellone}&from_date=${fromDate}&to_date=${toDate}`);
+        const impressioni = await responseImpressioni.json();
+        document.getElementById('totalViews').textContent = Object.values(impressioni).reduce((a, b) => a + b, 0);
+        const impiantoViews = document.getElementById('impiantoViews');
+        impiantoViews.innerHTML = '';
+        Object.entries(impressioni).forEach(([impianto, views]) => {
+            const li = document.createElement('li');
+            li.textContent = `${impianto}: ${views} visualizzazioni`;
+            impiantoViews.appendChild(li);
+        });
+
+        // Fetch tempo impressioni e palinsesti path
+        const responseTempoImpressioni = await fetch(`/report/get_tempo_impressioni?id_cartellone=${cartellone}&from_date=${fromDate}&to_date=${toDate}`);
+        const tempoImpressioni = await responseTempoImpressioni.json();
+        const tempoImpressioniList = document.getElementById('tempoImpressioniCartelloni');
+        tempoImpressioniList.innerHTML = '';
+        Object.entries(tempoImpressioni).forEach(([cartellone, minuti]) => {
+            const li = document.createElement('li');
+            li.textContent = `${cartellone}: ${minuti} Minuti`;
+            tempoImpressioniList.appendChild(li);
+        });
+
+        // Fetch palinsesti path
+        const responsePalinsestiPath = await fetch(`/report/get_palinsesti_path?id_cartellone=${cartellone}&from_date=${fromDate}&to_date=${toDate}`);
+        const palinsestiPath = await responsePalinsestiPath.json();
+        const palinsestiList = document.getElementById('palinsestiPath');
+        palinsestiList.innerHTML = '';
+        palinsestiPath.forEach(palinsesto => {
+            const li = document.createElement('li');
+            li.textContent = palinsesto;
+            palinsestiList.appendChild(li);
+        });
+
+    }
+
+    fetchCartelloni();
+    // Funzione per ottenere la data corrente nel formato "YYYY-MM-DD"
+    function getCurrentDate() {
+        const today = new Date();
+        const year = today.getFullYear();
+        let month = (today.getMonth() + 1).toString().padStart(2, '0');
+        let day = today.getDate().toString().padStart(2, '0');
+        return `${year}-${month}-${day}`;
+    }
+
+    // Funzione per ottenere la data del primo giorno dell'anno nel formato "YYYY-01-01"
+    function getFirstDayOfYear() {
+        const year = new Date().getFullYear();
+        return `${year}-01-01`;
+    }
+
+    // Imposta i valori predefiniti nel form
+    window.onload = function () {
+        document.getElementById('fromDate').value = getFirstDayOfYear();
+        document.getElementById('toDate').value = getCurrentDate();
+    };
+
+</script>
+</body>
+</html>

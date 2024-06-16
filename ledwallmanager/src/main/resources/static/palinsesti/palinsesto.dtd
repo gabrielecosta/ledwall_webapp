@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT palinsesto (cartellone+)>
+<!ATTLIST palinsesto id ID #REQUIRED>
+<!ELEMENT cartellone (percorso, durata, azienda)>
+<!ATTLIST cartellone id ID #REQUIRED>
+<!ELEMENT percorso (#PCDATA)>
+<!ELEMENT durata (#PCDATA)>
+<!ELEMENT azienda (#PCDATA)>

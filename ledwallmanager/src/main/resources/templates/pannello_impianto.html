@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+<head>
+    <meta charset="UTF-8">
+    <title>Pannello gestione impianto</title>
+    <style>
+        .btn.active,
+        .btn:active {
+            background-color: blue !important; /* Imposta il colore di sfondo a blu */
+            color: white; /* Imposta il colore del testo a bianco */
+        }
+    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Modifica Impianto</h2>
+        <!-- th:action="@{/gestioneImpianti/updateImpianto}" th:object="${impianto}" method="post" -->
+        <form th:action="@{/gestioneImpianti/updateImpianto}" th:object="${impianto}" method="post">
+            <div class="form-group">
+                <label for="id_impianto">Id impianto:</label>
+                <input type="number" readonly="readonly" class="form-control" id="id_impianto" th:field="*{idImpianto}" th:value="${impianto.idImpianto}">
+            </div>
+            <div class="form-group">
+                <label for="descrizione">Descrizione:</label>
+                <textarea class="form-control" required="required" id="descrizione" rows="3" th:text="${impianto.descrizione}" th:field="*{descrizione}"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="latitudine">Latitudine:</label>
+                <input type="number" required="required" step="0.00001" class="form-control" id="latitudine" name="latitudine" th:value="${impianto.latitudine}" th:field="*{latitudine}">
+            </div>
+            <div class="form-group">
+                <label for="longitudine">Longitudine:</label>
+                <input type="number" required="required" step="0.00001" class="form-control" id="longitudine" name="longitudine" th:value="${impianto.longitudine}" th:field="*{longitudine}">
+            </div>
+            <div class="form-group">
+                <label>Stato:</label>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label th:classappend="${impianto.statusImpianto == 0} ? 'active' : ''" class="btn btn-secondary">
+                        <input type="radio" required="required" name="status_impianto" id="status0" value="0" th:checked="${impianto.statusImpianto == 0}" th:field="*{statusImpianto}" > INATTIVO
+                    </label>
+                    <label th:classappend="${impianto.statusImpianto == 1} ? 'active' : ''" class="btn btn-secondary">
+                        <input type="radio" required="required" name="status_impianto" id="status1" value="1" th:checked="${impianto.statusImpianto == 1}" th:field="*{statusImpianto}"> ATTIVO
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="id_palinsesto">Palinsesto:</label>
+                <select class="form-control" required="required" id="id_palinsesto" name="id_palinsesto" th:field="*{palinsesto.idPalinsesto}">
+                    <option th:each="p : ${lista_palinsesti}"
+                            th:value="${p.idPalinsesto}"
+                            th:text="${p.pathPalinsesto}"
+                            th:selected="${p.idPalinsesto == impianto.palinsesto.idPalinsesto}">
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Salva Modifiche</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

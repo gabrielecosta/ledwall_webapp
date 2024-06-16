@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+<link rel="stylesheet" href="/css/home.css">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Welcome to CodeJava Home</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center">
+    <h1>Pagina di monitoraggio</h1>
+    <h3><a th:href="@{/users}">Lista degli Utenti</a></h3>
+    <!-- <h3><a th:href="@{/register}">Register</a></h3> -->
+    <!-- <h3><a th:href="@{/login}">Login</a></h3> -->
+    <h3><a th:href="@{/gestioneImpianti/}">Gestione Impianti</a></h3>
+    <h3><a th:href="@{/report}">Reportistica</a></h3>
+    <h3><a th:href="@{/wall?id=1}">Led Wall</a></h3>
+</div>
+
+</body>
+</html>

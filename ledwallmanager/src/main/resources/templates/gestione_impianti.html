@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <title>Gestione Impianti</title>
+</head>
+<body>
+<div class="container text-center">
+    <div>
+        <h1>Lista di Impianti</h1>
+    </div>
+
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Impianto ID</th>
+                <th>Descrizione</th>
+                <th>Latitudine</th>
+                <th>Longitudine</th>
+                <th>Palinsesto ID</th>
+                <th>Path Palinsesto</th>
+                <th>Status Impianto</th>
+                <th>Azione</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="impianto: ${listImpianti}">
+                <td th:text="${impianto.getIdImpianto()}">Impianto ID</td>
+                <td th:text="${impianto.getDescrizione()}">Descrizione</td>
+                <td th:text="${impianto.getLatitudine()}">Latitudine</td>
+                <td th:text="${impianto.getLongitudine()}">Longitudine</td>
+                <td th:text="${impianto.getPalinsesto().getIdPalinsesto()}">Id Palinsesto</td>
+                <td th:text="${impianto.getPalinsesto().getPathPalinsesto()}">Path Palinsesto</td>
+                <td th:text="${impianto.getStatusImpianto()}">Status impianto</td>
+                <td><a th:href="@{/gestioneImpianti/getImpianto(id=${#strings.toString(impianto.getIdImpianto())})}">Modifica</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3><a th:href="@{/gestioneImpianti/form}">Crea un nuovo impianto</a></h3>
+    </div>
+</div>
+</body>
+</html>

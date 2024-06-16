@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/">
+	<Resource auth="Container"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+		maxActive="10"
+		minIdle="2"
+        maxIdle="6"
+		maxWait="1000"
+			  name="jdbc/intellicraftersdb"
+			  username="intellicrafters"
+			  password="mg7XSzS9mmvx5sJ4r2ex"
+			  type="javax.sql.DataSource"
+			  url="jdbc:mysql://frostnetwork.iliadboxos.it:3306/intellicraftersdb?useLegacyDatetimeCode=false&amp;serverTimezone=Europe/Rome"
+			  testOnBorrow="true"
+		validationQuery="SELECT 1" />		
+</Context>
+<!-- frostnetwork.iliadboxos.it:3306 -->
+<!--
+name="jdbc/intellicraftersdb"
+username="intellicrafters"
+password="mg7XSzS9mmvx5sJ4r2ex"
+type="javax.sql.DataSource"
+url="jdbc:mysql://frostnetwork.iliadboxos.it:3306/intellicraftersdb?useLegacyDatetimeCode=false&amp;serverTimezone=Europe/Rome"
+-->
+<!--
+name="jdbc/intellicraftersdb"
+		username="root"
+		password="gabriele"
+		type="javax.sql.DataSource"
+		url="jdbc:mysql://localhost:3306/intellicraftersdb?useLegacyDatetimeCode=false&amp;serverTimezone=Europe/Rome"
+-->

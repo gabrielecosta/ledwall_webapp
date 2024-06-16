@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- INIZIO PALINSESTO -->
+<palinsesto xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="palinsesto.xsd" id="P3">  
+    <!-- CARTELLONE 1 -->
+	<cartellone id="C7">
+		<!-- PERCORSO CARTELLONE -->
+		<percorso>cartelloni/cartellone7/cartellone.html</percorso>
+		<!-- LA DURATA DEVE ESSERE IN SECONDI -->
+		<durata>30</durata>
+		<!-- AZIENDA CHE COMMISSIONA IL CARTELLONE -->
+		<azienda>Pokemon</azienda>
+	</cartellone>
+    <!-- FINE CARTELLONE 1 -->
+    
+    <!-- CARTELLONE 2 -->
+	<cartellone id="C8">
+		<!-- PERCORSO CARTELLONE -->
+		<percorso>cartelloni/cartellone8/cartellone.html</percorso>
+		<!-- LA DURATA DEVE ESSERE IN SECONDI -->
+		<durata>30</durata>
+		<!-- AZIENDA CHE COMMISSIONA IL CARTELLONE -->
+		<azienda>Università degli Studi di Palermo</azienda>
+	</cartellone>
+    <!-- FINE CARTELLONE 2 -->
+    
+    <!-- CARTELLONE 3 -->
+	<cartellone id="C9">
+		<!-- PERCORSO CARTELLONE -->
+		<percorso>cartelloni/cartellone9/cartellone.html</percorso>
+		<!-- LA DURATA DEVE ESSERE IN SECONDI -->
+		<durata>30</durata>
+		<!-- AZIENDA CHE COMMISSIONA IL CARTELLONE -->
+		<azienda>Castelli's</azienda>
+	</cartellone>
+    <!-- FINE CARTELLONE 3 -->
+
+</palinsesto>
+<!-- FINE PALISESTO -->

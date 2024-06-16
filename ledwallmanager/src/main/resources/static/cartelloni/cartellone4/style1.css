@@ -1,0 +1,207 @@
+*{
+    margin:0;
+    padding:0;
+}
+body {
+    font-family: "sans-serif";
+    background-color: crimson;
+}
+
+.wrapper {
+    width: 1920px;
+    height: 1080px;
+    background-color: rgba(5, 6, 47, 0.94);
+    position: absolute;
+}
+
+.container, .container_wrap {
+    width: 100%;
+    height: auto;
+    display: inline;
+}
+
+.coffee_cup {
+    animation: cup_animation 5s 1s alternate;
+    animation-fill-mode: forwards;
+    fill: transparent;
+}
+
+.steam1, .steam2, .steam3 {
+    fill: transparent;
+}
+
+.steam1 {
+    animation: steam_1_animation 4s 5s infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate-reverse;
+}
+
+.steam2 {
+    animation: steam_2_animation 4s 6s infinite;
+    animation-direction: alternate-reverse;
+    animation-fill-mode: forwards;
+}
+
+.steam3 {
+    animation: steam_3_animation 4s 7s infinite;
+    animation-fill-mode: forwards;
+    animation-direction: alternate-reverse;
+}
+
+.cup_container {
+    float: left;
+    /*
+    margin-left: 11%;
+    margin-top: 3%;
+     */
+    margin-left: 11%;
+    margin-top: 6%;
+    width: 700px;
+    height: auto;
+}
+
+.container {
+    float: right;
+    position: absolute;
+    width: 800px;
+    margin-top: 300px;
+    margin-left: 150px;
+    /*
+    width: 500px;
+    height: 500px;
+     */
+    /*
+    margin-top: 10%;
+    margin-left: 55%;
+     */
+}
+
+.box {
+    border-radius: 20px;
+    width: 60px;
+    height: 60px;
+    background: #f0f0f0;
+    animation: anime 5s cubic-bezier(0.16, 1, 0.3, 1) 1s alternate;
+    animation-fill-mode: forwards;
+    text-align: center;
+    opacity: 0;
+    color: white;
+    font-size: 0;
+}
+
+.coffee {
+    color: white;
+    font-size: 0;
+    animation: anime_text 5s 1s alternate;
+    animation-fill-mode: forwards;
+}
+
+.logo {
+    position: absolute;
+    margin-left: 800px;
+    margin-top: 700px;
+    /*
+    margin-left: 550px;
+    margin-top: 300px;
+     */
+    opacity: 0;
+    animation: logo_animation 6s 1s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.logo > img {
+    width: 250px;
+}
+
+@keyframes logo_animation {
+    100% {
+        /*
+        margin-top: 450px;
+         */
+        margin-top: 900px;
+        opacity: 1;
+    }
+}
+
+@keyframes cup_animation {
+    30% {
+        opacity: 0;
+        fill: transparent;
+    }
+    100% {
+        fill: rgb(255, 238, 238);
+        opacity: 1;
+    }
+}
+
+@keyframes steam_1_animation{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        fill: rgb(255, 238, 238);
+    }
+}
+
+@keyframes steam_2_animation{
+    0% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+        fill: rgb(255, 238, 238);
+    }
+}
+
+@keyframes steam_3_animation{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        fill: rgb(255, 238, 238);
+    }
+}
+
+@keyframes anime_text {
+    40% {
+        color: white;
+        font-size: 0;
+    }
+    100% {
+        font-size: 70px;
+        color: rgba(234, 0, 0, 0.87);
+    }
+}
+
+@keyframes anime {
+    0% {
+        width: 60px;
+        height: 60px;
+        background: rgb(255, 238, 238);;
+        opacity: 0;
+    }
+    25% {
+        width: 60px;
+        height: 60px;
+        background: rgb(255, 238, 238);;
+        opacity: 1;
+    }
+    50% {
+        width: 60px;
+        height: 240px;
+        background: rgb(255, 238, 238);;
+        color: white;
+        font-size: 0;
+    }
+    100% {
+        width: 680px;
+        height: 340px;
+        background: rgb(255, 238, 238);;
+        color: black;
+        font-size: 55px;
+        opacity: 1;
+    }
+}

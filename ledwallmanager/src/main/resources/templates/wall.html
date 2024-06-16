@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://ww.thymeleaf.org" th:id="${id_impianto}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Wall</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<script>
+    function caricaWall() {
+        var pathPalinsesto = "[[${path_palinsesto}]]";
+        caricaPalinsesto("/palinsesti/" + pathPalinsesto);
+        caricaData();
+    }
+</script>
+<body onload="caricaWall()">
+    <div id="primario">
+        <div id="wall_container">
+            <iframe id="wall" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div id="footer">
+            <p>Città: Palermo</p>
+           <p>Meteo: <span id="tempo"></span></p>
+           <p>Data: <span id= "current_data"></span></p>
+        </div>
+    </div>
+    <script th:src="@{/js/wall.js}"></script>
+    <script th:src="@{/js/temp_api_pos.js}"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+@font-face {
+    font-family: Ubuntu Mono;
+    src: url(Ubuntu_Mono/UbuntuMono-Bold.ttf);
+}
+
+#wrapper
+{
+    background-image: url("Schermo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    width: 1920px;
+    height: 1080px;
+}
+#scritta h2, h1, h3
+{
+    font-family: 'Ubuntu Mono', monospace;
+    color: #f8fcf7; 
+    overflow: hidden; /* Nasconde il testo in eccesso */
+    white-space: nowrap; /* Evita il ritorno a capo */
+    font-size: 2.5em;
+}
+#scritta h3 {
+
+    animation: typing 6s steps(40, end) forwards, blink-caret 1.8s forwards;
+    width: 0; /* Nasconde il testo all'inizio */
+    position: absolute;
+    top: 220px;
+    left: 395px;
+}
+
+#scritta h1 {
+    animation: typing 6s steps(40, end) forwards 3s, blink-caret 1s forwards 3s;
+    width: 0; /* Nasconde il testo all'inizio */
+    position: absolute;
+    top: 350px;
+    left: 610px;
+}
+
+#scritta h2 {
+    animation: typing 6s steps(40, end) forwards 6s, blink-caret 2s forwards 6s;
+    width: 0; /* Nasconde il testo all'inizio */
+    position: absolute;
+    margin-top: 500px;
+    left: 395px;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+        border-right: 3px solid white;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+        border-right: 0;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
+
+#logounipa {
+    width: 10em;
+    height: auto;
+    position: absolute;
+    opacity: 0; /* Inizialmente invisibile */
+    animation: fadeIn 0s 9s forwards;
+    margin-top: 600px;
+    left: 850px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'Dosis';
+    src : url(Dosis/Dosis-VariableFont_wght.ttf)
+  }
+
+body {
+    background-color: black;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#wrapper {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    background-image: url("Background2021_NoLogo.jpg");
+    background-size: 250%;
+    background-repeat: no-repeat;
+    background-blend-mode: color-dodge;
+    background-color: #292929;
+    animation: backgroundPositionSliding 10s cubic-bezier(.22,.61,.36,1) infinite;
+}
+
+#separator {
+    width: 2.5px;
+    height: 800px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: white;
+    object-fit: cover;
+    box-shadow: 0px 0px 5px black;
+    animation: separatorStretching 1s ease-in-out forwards;
+}
+
+#slogan {
+    position: absolute;
+    width: 570px;
+    height: 700px;
+    margin-left: 232px;
+    margin-top: 210px;
+    overflow: hidden;
+}
+
+#slogan p {
+    text-transform: uppercase;
+    color: white;
+    padding: 0;
+    text-align: left;
+    margin: 0;
+    text-shadow: 0px 0px 10px black;
+    font-size: 130px;
+    overflow: hidden;
+    margin-left: 700px;
+    animation: sloganSliding 1.0s cubic-bezier(.39,.58,.57,1) forwards 0.5s;
+}
+
+#logo {
+    position: absolute;
+    width: 730px;
+    height: 300px;
+    margin-left: 1100px;
+    margin-top: 465px;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-image: url("logo.png");
+    background-position-x: -250%;
+    filter: drop-shadow(0px 0px 10px black);
+    animation: logoSliding 1s cubic-bezier(.39,.58,.57,1) forwards 1s;
+}
+
+@keyframes separatorStretching {
+    from {
+        height: 0px;
+    }
+    to {
+        height: 800px;
+    }
+}
+
+@keyframes sloganSliding {
+    from {
+        margin-left: 700px;
+    }
+    to {
+        margin-left: 20px;
+    }
+}
+
+@keyframes logoSliding {
+    from {
+        background-position-x: -250%;
+    }
+    to {
+        background-position-x: 0px;
+    }
+}
+
+@keyframes backgroundPositionSliding {
+    0% {
+        background-position: 20% 20%;
+    }
+    25% {
+        background-position: 80% 20%;
+    }
+    50% {
+        background-position: 80% 80%;
+    }
+    75% {
+        background-position: 20% 80%;
+    }
+    100% {
+        background-position: 20% 20%;
+    }
+}

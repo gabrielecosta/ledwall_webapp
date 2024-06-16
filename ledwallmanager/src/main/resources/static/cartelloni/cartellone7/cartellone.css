@@ -1,0 +1,143 @@
+@font-face {
+    font-family: Pokemon1;
+    src : url(pokemon/Pokemon\ Hollow.ttf)
+  }
+@font-face {
+    font-family: pokemon2;
+    src: url(pokemon/Pokemon\ Solid.ttf);
+}
+
+#wrapper {
+    background-image: url("sfondopokemon.jpeg");
+    width: 1920px;
+    height: 1080px;
+    inset: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: absolute;
+}
+
+#gruppo
+{
+    position: absolute;
+    width: 480px;
+    height: 272px;
+    margin-top: -50px;
+    margin-left: -150px;
+}
+#t1
+{
+    font-family: Pokemon2;
+    color: transparent;
+    background: linear-gradient(to bottom, white, rgb(5, 114, 223));
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 3px white; /* Aggiunge un contorno bianco */
+    font-size: 128px;
+    position: absolute;
+    margin: 0px;
+    margin-top: 300px;
+    margin-left: 300px;
+}
+#telefono
+{
+    height: 1100px; /*Sposta dall'alto verso il basso la scritta */
+    position: absolute;
+    bottom: -100px;
+    right: 240px;
+}
+#t2
+{
+    background: linear-gradient(to bottom, rgb(5, 114, 223), rgb(246, 246, 242));
+    -webkit-background-clip: text;
+    font-family: Pokemon2;
+    background-clip: text;
+    text-align: center; /* Per centrare il testo */
+    color: transparent;
+    font-size: 144px;
+    -webkit-text-stroke: 3px white; /* Aggiunge un contorno bianco */
+    margin: 0px;
+    position: absolute;
+    margin-left: 280px;
+    margin-top: 420px;
+}
+
+#t4
+{
+    background: linear-gradient(to bottom, rgb(5, 114, 223), rgb(246, 246, 242));
+    -webkit-background-clip: text;
+    font-family: Pokemon2;
+    background-clip: text;
+    text-align: center; /* Per centrare il testo */
+    color: transparent;
+    font-size: 144px;
+    -webkit-text-stroke: 3px white; /* Aggiunge un contorno bianco */
+    margin: 0px;
+    position: absolute;
+    margin-left: 320px;
+    margin-top: 530px;
+}
+
+#lugia
+{
+    content: url("pokemon/lugia/Property\ 1=lugia-1.png");
+    width: 200px;
+    height: auto;
+    animation: lugia 1.5s ease-in-out forwards infinite;
+    position: absolute;
+    margin-top: 571px;
+    margin-left: 690px;
+
+    
+}
+@keyframes lugia 
+{
+    0%{content: url("pokemon/lugia/Property\ 1=lugia-1.png");}
+    10%{content: url("pokemon/lugia/Property\ 1=lugia-2.png");}
+    20%{content: url("pokemon/lugia/Property\ 1=lugia-3.png");}
+    30%{content: url("pokemon/lugia/Property\ 1=lugia-b.png");}
+    40%{content: url("pokemon/lugia/Property\ 1=lugia-c.png");}
+    50%{content: url("pokemon/lugia/Property\ 1=lugia-d.png");}
+    60%{content: url("pokemon/lugia/Property\ 1=Variant12.png");}
+    70%{content: url("pokemon/lugia/Property\ 1=Variant11.png");}
+    80%{content: url("pokemon/lugia/Property\ 1=Variant10.png");}
+    90%{content: url("pokemon/lugia/Property\ 1=lugia-4.png");}
+}
+#t3
+{
+    font-family: Pokemon2;
+    color: #050101;
+    position: absolute;
+    bottom: 50px;
+    font-size: 34px;
+    left: 750px;
+
+}
+@keyframes animateText {
+    0% { color: #050101; }
+    50% { color: #0a6c8d; }
+    100% { color: #050101; }
+}
+
+#t1, #t2, #t4 {
+    animation: animateText 2s linear infinite;
+}
+
+#t3 {
+    color: rgba(5, 1, 1, 0); /* Imposta il testo come trasparente all'inizio */
+    position: absolute;
+    bottom: 50px;
+    font-size: 50px;
+    left: 190px;
+    -webkit-text-stroke: 0.5px rgb(239, 241, 243); /* Aggiunge un contorno bianco */
+    animation: fadeInText 5s ease-in-out forwards; /* Modifica la durata e la curva di accelerazione secondo le tue preferenze */
+}
+
+@keyframes fadeInText {
+    from {
+        color: rgba(253, 248, 248, 0); /* Testo trasparente */
+    }
+    to {
+        color: #050101; /* Testo con colore originale */
+    }
+}

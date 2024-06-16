@@ -1,0 +1,176 @@
+@font-face {
+    font-family: Pizza;
+    src: url(pizza.ttf);
+}
+
+#wrapper {
+    width: 1920px;
+    height: 1080px;
+    background-image: url("sfondo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+}
+
+#Titolo
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+#faro
+{
+    scale: 0;
+    width: 200px;
+    height: 200px;
+    animation: faro 1.5s forwards ease-in-out;
+}
+
+#Titolo h1
+{
+    font-family: Pizza;
+    color: rgb(215, 63, 8);   
+    font-size: 0px; 
+    margin: 0px;
+    padding-top: 60px;
+    animation: typing 1.5s forwards;
+    animation-delay: 1s;
+}
+
+#Principale h2
+{
+    font-family: Pizza;
+    font-size: 80px;
+    color: white;
+    padding-left: 50px;
+    position: absolute;
+    left: -1000px;
+    animation: description 2s forwards;
+    animation-delay: 2s;
+
+}
+
+#Info1, #Info2{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    color: white;
+    font-family: Pizza;
+    padding-left: 50px;
+    margin-top: 20px;
+
+}
+
+#cell
+{
+    scale: 0;
+    margin-right: 30px;
+    width: 50px;
+    height: 50px;
+    animation: faro 1.5s forwards ease-in-out;
+    animation-delay: 2.5s;
+}
+
+#pin
+{
+    scale: 0;
+    margin-right: 30px;
+    width: 30px;
+    height: 50px;
+    animation: faro 1.5s forwards ease-in-out;
+    animation-delay: 2.5s;
+}
+
+#Primo
+{
+    font-size: 0px;
+    animation: typing2 1.5s forwards;
+    animation-delay: 3s;
+}
+
+#Secondo
+{
+    font-size: 0px;
+    animation: typing2 1.5s forwards;
+    animation-delay: 3s;
+}
+
+#Pizza1{
+    position: absolute;
+    top: 1100px;
+    right: 300px;
+    width: 800px;
+    background-size: cover;
+    height: 500px;
+    animation: pizza1 1.5s forwards ease-in-out;
+    animation-delay: 4s;
+    background-image: url("pizza1.png");
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+#Pizza2{
+    position: absolute;
+    top: -500px;
+    right: 200px;
+    width: 800px;
+    height: 500px;
+    background-size: cover;
+    animation: pizza2 1.5s forwards ease-in-out;
+    animation-delay: 4s;
+    background-image: url("pizza2.png");
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+@keyframes faro 
+{
+    0%{scale: 0;}
+    100%{scale: 1;}
+}
+
+@keyframes pizza1 
+{
+    0%{ top: 1100px;}
+    100%{ top: 350px;}
+}
+
+@keyframes pizza2
+{
+    0%{ top: -500px;}
+    100%{ top: 200px;}
+}
+
+@keyframes pizza11
+{
+    0%{ top: 1000px;}
+    100%{ top: 350px;}
+}
+
+@keyframes pizza22
+{
+    0%{ top: -400px;}
+    100%{ top: 200px;}
+}
+
+@keyframes typing {
+    from { font-size: 0px; }
+    to { font-size: 70px; }
+}
+
+@keyframes typing2 {
+    from { font-size: 0px; }
+    to { font-size: 30px; }
+}
+
+@keyframes description{
+    0%{ left: -1000px;}
+    99%{ left: 400px;  }
+    100%{position:static;}
+}

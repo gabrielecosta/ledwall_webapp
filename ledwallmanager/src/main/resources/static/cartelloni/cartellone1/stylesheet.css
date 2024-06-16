@@ -1,0 +1,160 @@
+/* ADVERTISEMENT 1 STYLESHEET */
+
+@font-face {
+    font-family: 'Caveat Brush';
+    src : url(Caveat_Brush/CaveatBrush-Regular.ttf)
+  }
+
+body {
+    background-color: black;
+    overflow: hidden;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#wrapper {
+    width: 1920px;
+    position: absolute;
+    height: 1080px;
+    overflow: hidden;
+}
+
+#background_container {
+    background-image: url("renzo_barbera_background.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    animation: opacityScaleWrapper 2s ease-in-out forwards, colorChangeWrapper 3s ease-in-out forwards infinite 2s;
+}
+
+#subscription_announcement_container {
+    background-color: #1e1e1e80;
+    height: 70px;
+    color: white;
+    line-height: 70px;
+    animation: subscriptionAnnouncementSlideEffect 2s ease-in-out forwards 0.5s;
+}
+
+#subscription_announcement_container p {
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+
+#conquer_container {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    overflow: hidden;
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#conquer_slogan {
+    font-size: 250px;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    margin: 0;
+    text-shadow: 10px 10px 10px black;
+    animation: conquerSlideEffect 2s ease-in-out forwards 0.5s;
+    transform: translateY(100%);
+}
+
+#eagle {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: -1020px;
+    z-index: 1;
+    animation: eagleFlying 2s cubic-bezier(.17,.84,.44,1) forwards 0.5s;
+}
+
+#palermo_fc_logo_container {
+    margin-top: 40%;
+    opacity: 0;
+    animation: palermoLogoSlideEffect 2s ease-in-out forwards 0.5s;
+}
+
+#palermo_fc_logo_container img {
+    width: 10%;
+}
+
+/* Animazione scala con opacità wrapper */
+@keyframes opacityScaleWrapper {
+    from {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animazione cambio colori wrapper */
+@keyframes colorChangeWrapper {
+    0% {
+        filter: saturate(100%);
+    }
+    50% {
+        filter: saturate(20%);
+    }
+    100% {
+        filter: saturate(100%);
+    }
+}
+
+/* Animazione comparsa scritta conquistiAmola */
+@keyframes conquerSlideEffect {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+/* Animazione aquila */
+@keyframes eagleFlying {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(200%);
+    }
+}
+
+/* Animazione Palermo FC Logo */
+@keyframes palermoLogoSlideEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+/* Animazione Palermo FC Logo */
+@keyframes subscriptionAnnouncementSlideEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}

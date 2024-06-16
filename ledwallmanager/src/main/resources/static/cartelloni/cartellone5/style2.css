@@ -1,0 +1,180 @@
+body {
+    background-color: rgb(37, 37, 37);
+    /*
+    r: 255, g: 215, b: 0
+     */
+}
+
+.cartellone {
+    width: 1920px;
+    height: 1080px;
+    background-color: rgba(0, 0, 0, 0.92);
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    display: inline;
+    color: white;
+}
+
+.text_box {
+    float: left;
+    width: 600px;
+    height: 700px;
+    margin-left: 150px;
+    margin-top: 150px;
+    align-items: center;
+}
+
+@font-face { font-family: Mont; src: url('Mont-HeavyDEMO.otf'); }
+.name_text {
+    margin-top: 200px;
+    font-size: 40px;
+    text-align: center;
+    font-family: Mont;
+}
+
+@font-face { font-family: MontL; src: url('Mont-ExtraLightDEMO.otf'); }
+.adv {
+    font-family: MontL;
+    margin-top: 50px;
+    font-size: 50px;
+    text-align: center;
+    color: #8c7800;
+    font-weight: bolder;
+}
+
+.address {
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+
+@font-face { font-family: AstonScript; src: url('Aston Script.ttf'); }
+.name_text span{
+    font-size: 55px;
+    font-family: AstonScript;
+}
+
+.orologi {
+    float: right;
+    width: 1000px;
+    height: 800px;
+    margin-top: 150px;
+    margin-right: 50px;
+    display: inline;
+}
+
+.orologio_blu {
+    background: url("blu_sfondo.svg") no-repeat center;
+    background-size: 95%;
+    width: 450px;
+    height: 700px;
+    margin-top: 50px;
+    margin-left: 20px;
+    float: left;
+    align-content: center;
+}
+
+.minuti, .secondi, .minuti_2, .secondi_2 {
+    position: absolute;
+    margin-top: 260px;
+    margin-left: 180px;
+    width: 170px;
+    height: 100px;
+}
+
+
+.secondi img {
+    transform-origin: 25px 37px;
+    /*
+    transform: rotate(260deg);
+     */
+    animation: rotateSecond 10s linear infinite;
+}
+
+.secondi_2 img {
+    transform-origin: 25px 37px;
+    /*
+    transform: rotate(260deg);
+     */
+    animation: rotateSecond2 10s linear infinite;
+}
+
+.minuti img {
+    transform-origin: 27px 37px;
+    animation: rotateMinute 60s linear infinite;
+}
+
+.minuti_2 img {
+    transform-origin: 27px 37px;
+    animation: rotateMinute2 60s linear infinite;
+}
+
+.orologio_blu svg {
+    height: 100%;
+}
+
+.orologio_verde {
+    background: url("verde_sfondo.svg") no-repeat center;
+    background-size: 90%;
+    width: 450px;
+    height: 700px;
+    margin-top: 50px;
+    margin-right: 20px;
+    float: right;
+}
+
+.orologio_verde svg {
+    height: 100%;
+}
+
+/*
+animazioni per le lancette
+ */
+
+@keyframes rotateHour {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(450deg);
+    }
+}
+
+@keyframes rotateMinute {
+    from {
+        transform: rotate(180deg);
+    }
+    to {
+        transform: rotate(540deg);
+    }
+}
+
+@keyframes rotateSecond {
+    from {
+        transform: rotate(270deg);
+    }
+    to {
+        transform: rotate(630deg);
+    }
+}
+
+@keyframes rotateMinute2 {
+    from {
+        transform: rotate(260deg);
+    }
+    to {
+        transform: rotate(620deg);
+    }
+}
+
+@keyframes rotateSecond2 {
+    from {
+        transform: rotate(200deg);
+    }
+    to {
+        transform: rotate(560deg);
+    }
+}

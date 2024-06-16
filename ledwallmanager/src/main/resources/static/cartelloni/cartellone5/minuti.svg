@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="220.293 203.517 92.476 50.637" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="233.324" cy="223.482" r="84.201" id="gradient-4" gradientTransform="matrix(0.271588, 0.509603, -0.632079, 0.33686, 311.214107, 29.297257)">
+      <stop offset="0" style="stop-color: rgb(0% 3.9216% 33.725%)"/>
+      <stop offset="1" style="stop-color: rgb(1, 2, 39);"/>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="187.592" cy="215.799" r="42.594" id="gradient-1" gradientTransform="matrix(1, 0, 0, 1, 0, 0)">
+      <stop offset="0" style="stop-color: rgb(84.706% 84.706% 84.706%)"/>
+      <stop offset="1" style="stop-color: rgb(48.42% 48.42% 48.42%)"/>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="169.041" cy="272.173" r="38.382" id="gradient-2" gradientTransform="matrix(1, 0, 0, 1, -0.000007, 0.000014)">
+      <stop offset="0" style="stop-color: rgb(70.98% 70.98% 70.98%)"/>
+      <stop offset="1" style="stop-color: rgb(40.978% 40.978% 40.978%)"/>
+    </radialGradient>
+    <radialGradient gradientUnits="userSpaceOnUse" cx="232.601" cy="223.614" r="7.812" id="gradient-3">
+      <stop offset="0" style="stop-color: rgb(73.725% 73.725% 73.725%)"/>
+      <stop offset="1" style="stop-color: rgb(42.468% 42.468% 42.468%)"/>
+    </radialGradient>
+  </defs>
+  <g style="">
+    <title>Lancette</title>
+    <path d="M 144.998 210.999 H 155.887 L 144.998 210.039 L 230.186 215.799 L 144.998 221.559 L 155.887 220.6 H 144.998 V 210.999 Z" style="stroke: rgb(0, 0, 0); fill: url('#gradient-1');" transform="matrix(0.956112, 0.293002, -0.293002, 0.956112, 154.226791, -25.126499)">
+      <title>minuti</title>
+    </path>
+    <ellipse style="stroke: rgb(0, 0, 0); fill: url('#gradient-3');" cx="232.601" cy="223.614" rx="7.812" ry="8.246">
+      <title>centro</title>
+    </ellipse>
+  </g>
+</svg>

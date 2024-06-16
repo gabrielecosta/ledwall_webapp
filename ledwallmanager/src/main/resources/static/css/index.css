@@ -1,0 +1,58 @@
+@font-face {
+    font-family: poppins;
+    src: url(/font/regularpoppins.ttf);
+}
+@keyframes colorChange {
+    0% {background: rgb(57, 12, 77);}
+    20% {background: rgb(94, 45, 136);}
+    40% {background: rgb(196, 170, 241);}
+    60% {background: rgb(47, 96, 111);}
+    80% {background: rgb(38, 37, 97);}
+    100% {background: rgb(57, 12, 77);}
+}
+
+#wall_container {
+    width: 1920px;
+    height: 1080px;
+    background-color: black;
+}
+iframe {
+  width: 1920px;
+  height: 1080px;
+  border: none;
+}
+#footer {
+    width: 1920px;
+    height: 100px;
+    background: rgb(57, 12, 77);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+    flex-direction: row;
+    border-top: 3px solid #fff;
+    /* Modifica dell'animazione */
+    animation: colorChange 20s ease-in-out infinite;
+    font-family: poppins;
+}
+#footer p {
+    margin: 0 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+#primario {
+    margin: 0;
+}
+
+.weather_api {
+    display: inline-flex;
+    align-items: center;
+}
+
+.weather_api img {
+    margin-left: 15px; /* Aggiunge spazio a destra dell'icona meteo */
+    width: 65px; /* Imposta la larghezza dell'icona meteo */
+    height: 65px; /* Imposta l'altezza dell'icona meteo */
+}
